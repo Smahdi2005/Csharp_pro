@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Student.models
 {
-    internal class Student
+    internal class Students
     {
+        //students property//
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string nationalcode { get; set; }
 
+        
     }
 }

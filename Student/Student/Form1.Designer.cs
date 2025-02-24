@@ -34,7 +34,15 @@
             firstNameTextBox = new TextBox();
             lastNameTextBox = new TextBox();
             nationalCodeTextBox = new TextBox();
-            button1 = new Button();
+            registerButton = new Button();
+            loginFirstNameLabel = new Label();
+            loginLastNameLabel = new Label();
+            loginFirstNameTextBox = new TextBox();
+            loginLastNameTextBox = new TextBox();
+            loginButton = new Button();
+            showLabel = new Label();
+            showerorLabel = new Label();
+            showRegisterLabel = new Label();
             SuspendLayout();
             // 
             // firstNameLabel
@@ -86,21 +94,97 @@
             nationalCodeTextBox.Size = new Size(181, 27);
             nationalCodeTextBox.TabIndex = 5;
             // 
-            // button1
+            // registerButton
             // 
-            button1.Location = new Point(388, 69);
-            button1.Name = "button1";
-            button1.Size = new Size(291, 39);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            registerButton.Location = new Point(388, 69);
+            registerButton.Name = "registerButton";
+            registerButton.Size = new Size(291, 39);
+            registerButton.TabIndex = 6;
+            registerButton.Text = "Sighn Up";
+            registerButton.UseVisualStyleBackColor = true;
+            registerButton.Click += registerButton_Click;
+            // 
+            // loginFirstNameLabel
+            // 
+            loginFirstNameLabel.AutoSize = true;
+            loginFirstNameLabel.Location = new Point(40, 273);
+            loginFirstNameLabel.Name = "loginFirstNameLabel";
+            loginFirstNameLabel.Size = new Size(76, 20);
+            loginFirstNameLabel.TabIndex = 7;
+            loginFirstNameLabel.Text = "FirstName";
+            // 
+            // loginLastNameLabel
+            // 
+            loginLastNameLabel.AutoSize = true;
+            loginLastNameLabel.Location = new Point(41, 318);
+            loginLastNameLabel.Name = "loginLastNameLabel";
+            loginLastNameLabel.Size = new Size(75, 20);
+            loginLastNameLabel.TabIndex = 8;
+            loginLastNameLabel.Text = "LastName";
+            // 
+            // loginFirstNameTextBox
+            // 
+            loginFirstNameTextBox.Location = new Point(151, 270);
+            loginFirstNameTextBox.Name = "loginFirstNameTextBox";
+            loginFirstNameTextBox.Size = new Size(181, 27);
+            loginFirstNameTextBox.TabIndex = 9;
+            // 
+            // loginLastNameTextBox
+            // 
+            loginLastNameTextBox.Location = new Point(151, 315);
+            loginLastNameTextBox.Name = "loginLastNameTextBox";
+            loginLastNameTextBox.Size = new Size(181, 27);
+            loginLastNameTextBox.TabIndex = 10;
+            // 
+            // loginButton
+            // 
+            loginButton.Location = new Point(388, 288);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(291, 39);
+            loginButton.TabIndex = 11;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
+            // 
+            // showLabel
+            // 
+            showLabel.AutoSize = true;
+            showLabel.Location = new Point(524, 349);
+            showLabel.Name = "showLabel";
+            showLabel.Size = new Size(9, 20);
+            showLabel.TabIndex = 12;
+            showLabel.Text = "\r\n";
+            // 
+            // showerorLabel
+            // 
+            showerorLabel.AutoSize = true;
+            showerorLabel.Location = new Point(524, 369);
+            showerorLabel.Name = "showerorLabel";
+            showerorLabel.Size = new Size(0, 20);
+            showerorLabel.TabIndex = 13;
+            // 
+            // showRegisterLabel
+            // 
+            showRegisterLabel.AutoSize = true;
+            showRegisterLabel.Location = new Point(533, 120);
+            showRegisterLabel.Name = "showRegisterLabel";
+            showRegisterLabel.Size = new Size(0, 20);
+            showRegisterLabel.TabIndex = 14;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(showRegisterLabel);
+            Controls.Add(showerorLabel);
+            Controls.Add(showLabel);
+            Controls.Add(loginButton);
+            Controls.Add(loginLastNameTextBox);
+            Controls.Add(loginFirstNameTextBox);
+            Controls.Add(loginLastNameLabel);
+            Controls.Add(loginFirstNameLabel);
+            Controls.Add(registerButton);
             Controls.Add(nationalCodeTextBox);
             Controls.Add(lastNameTextBox);
             Controls.Add(firstNameTextBox);
@@ -109,6 +193,7 @@
             Controls.Add(firstNameLabel);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,6 +206,14 @@
         private TextBox firstNameTextBox;
         private TextBox lastNameTextBox;
         private TextBox nationalCodeTextBox;
-        private Button button1;
+        private Button registerButton;
+        private Label loginFirstNameLabel;
+        private Label loginLastNameLabel;
+        private TextBox loginFirstNameTextBox;
+        private TextBox loginLastNameTextBox;
+        private Button loginButton;
+        private Label showLabel;
+        private Label showerorLabel;
+        private Label showRegisterLabel;
     }
 }
