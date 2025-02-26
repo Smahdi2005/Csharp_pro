@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Student.models;
 
-namespace Student.models
+internal class Students : Users
 {
-    internal class Students
+    //set contructors//
+    public Students(string firstName, string lastName)
     {
-        //students property//
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string nationalcode { get; set; }
-
-        
+        firstName = FirstName;
+        lastName = LastName;
     }
+
+    public Students(string firstName, string lastName, string nationalcode , string userRole) : this(firstName, lastName)
+    {
+        {
+            nationalcode = Nationalcode;
+            userRole = UserRole;
+        }
+
+    }
+
 }

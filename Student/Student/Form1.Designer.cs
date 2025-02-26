@@ -43,12 +43,14 @@
             showLabel = new Label();
             showerorLabel = new Label();
             showRegisterLabel = new Label();
+            studentRoleCheckBox = new CheckBox();
+            masterRolecheckBox = new CheckBox();
             SuspendLayout();
             // 
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new Point(41, 36);
+            firstNameLabel.Location = new Point(48, 166);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new Size(76, 20);
             firstNameLabel.TabIndex = 0;
@@ -57,7 +59,7 @@
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new Point(41, 78);
+            lastNameLabel.Location = new Point(48, 208);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new Size(75, 20);
             lastNameLabel.TabIndex = 1;
@@ -67,7 +69,7 @@
             // nationalCodeLabel
             // 
             nationalCodeLabel.AutoSize = true;
-            nationalCodeLabel.Location = new Point(41, 123);
+            nationalCodeLabel.Location = new Point(48, 253);
             nationalCodeLabel.Name = "nationalCodeLabel";
             nationalCodeLabel.Size = new Size(101, 20);
             nationalCodeLabel.TabIndex = 2;
@@ -75,28 +77,28 @@
             // 
             // firstNameTextBox
             // 
-            firstNameTextBox.Location = new Point(151, 34);
+            firstNameTextBox.Location = new Point(159, 163);
             firstNameTextBox.Name = "firstNameTextBox";
             firstNameTextBox.Size = new Size(181, 27);
             firstNameTextBox.TabIndex = 3;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(151, 75);
+            lastNameTextBox.Location = new Point(159, 204);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(181, 27);
             lastNameTextBox.TabIndex = 4;
             // 
             // nationalCodeTextBox
             // 
-            nationalCodeTextBox.Location = new Point(151, 120);
+            nationalCodeTextBox.Location = new Point(159, 249);
             nationalCodeTextBox.Name = "nationalCodeTextBox";
             nationalCodeTextBox.Size = new Size(181, 27);
             nationalCodeTextBox.TabIndex = 5;
             // 
             // registerButton
             // 
-            registerButton.Location = new Point(388, 69);
+            registerButton.Location = new Point(396, 204);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(291, 39);
             registerButton.TabIndex = 6;
@@ -107,7 +109,7 @@
             // loginFirstNameLabel
             // 
             loginFirstNameLabel.AutoSize = true;
-            loginFirstNameLabel.Location = new Point(40, 273);
+            loginFirstNameLabel.Location = new Point(48, 339);
             loginFirstNameLabel.Name = "loginFirstNameLabel";
             loginFirstNameLabel.Size = new Size(76, 20);
             loginFirstNameLabel.TabIndex = 7;
@@ -116,7 +118,7 @@
             // loginLastNameLabel
             // 
             loginLastNameLabel.AutoSize = true;
-            loginLastNameLabel.Location = new Point(41, 318);
+            loginLastNameLabel.Location = new Point(49, 384);
             loginLastNameLabel.Name = "loginLastNameLabel";
             loginLastNameLabel.Size = new Size(75, 20);
             loginLastNameLabel.TabIndex = 8;
@@ -124,21 +126,21 @@
             // 
             // loginFirstNameTextBox
             // 
-            loginFirstNameTextBox.Location = new Point(151, 270);
+            loginFirstNameTextBox.Location = new Point(159, 336);
             loginFirstNameTextBox.Name = "loginFirstNameTextBox";
             loginFirstNameTextBox.Size = new Size(181, 27);
             loginFirstNameTextBox.TabIndex = 9;
             // 
             // loginLastNameTextBox
             // 
-            loginLastNameTextBox.Location = new Point(151, 315);
+            loginLastNameTextBox.Location = new Point(159, 381);
             loginLastNameTextBox.Name = "loginLastNameTextBox";
             loginLastNameTextBox.Size = new Size(181, 27);
             loginLastNameTextBox.TabIndex = 10;
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(388, 288);
+            loginButton.Location = new Point(396, 354);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(291, 39);
             loginButton.TabIndex = 11;
@@ -149,7 +151,7 @@
             // showLabel
             // 
             showLabel.AutoSize = true;
-            showLabel.Location = new Point(524, 349);
+            showLabel.Location = new Point(532, 415);
             showLabel.Name = "showLabel";
             showLabel.Size = new Size(9, 20);
             showLabel.TabIndex = 12;
@@ -158,7 +160,7 @@
             // showerorLabel
             // 
             showerorLabel.AutoSize = true;
-            showerorLabel.Location = new Point(524, 369);
+            showerorLabel.Location = new Point(532, 435);
             showerorLabel.Name = "showerorLabel";
             showerorLabel.Size = new Size(0, 20);
             showerorLabel.TabIndex = 13;
@@ -166,16 +168,40 @@
             // showRegisterLabel
             // 
             showRegisterLabel.AutoSize = true;
-            showRegisterLabel.Location = new Point(533, 120);
+            showRegisterLabel.Location = new Point(541, 255);
             showRegisterLabel.Name = "showRegisterLabel";
             showRegisterLabel.Size = new Size(0, 20);
             showRegisterLabel.TabIndex = 14;
+            // 
+            // studentRoleCheckBox
+            // 
+            studentRoleCheckBox.AutoSize = true;
+            studentRoleCheckBox.Location = new Point(48, 43);
+            studentRoleCheckBox.Name = "studentRoleCheckBox";
+            studentRoleCheckBox.Size = new Size(82, 24);
+            studentRoleCheckBox.TabIndex = 15;
+            studentRoleCheckBox.Text = "Student";
+            studentRoleCheckBox.UseVisualStyleBackColor = true;
+            studentRoleCheckBox.CheckedChanged += studentRoleCheckBox_CheckedChanged;
+            // 
+            // masterRolecheckBox
+            // 
+            masterRolecheckBox.AutoSize = true;
+            masterRolecheckBox.Location = new Point(48, 73);
+            masterRolecheckBox.Name = "masterRolecheckBox";
+            masterRolecheckBox.Size = new Size(76, 24);
+            masterRolecheckBox.TabIndex = 16;
+            masterRolecheckBox.Text = "Master";
+            masterRolecheckBox.UseVisualStyleBackColor = true;
+            masterRolecheckBox.CheckedChanged += masterRolecheckBox_CheckedChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(832, 505);
+            Controls.Add(masterRolecheckBox);
+            Controls.Add(studentRoleCheckBox);
             Controls.Add(showRegisterLabel);
             Controls.Add(showerorLabel);
             Controls.Add(showLabel);
@@ -215,5 +241,7 @@
         private Label showLabel;
         private Label showerorLabel;
         private Label showRegisterLabel;
+        private CheckBox studentRoleCheckBox;
+        private CheckBox masterRolecheckBox;
     }
 }

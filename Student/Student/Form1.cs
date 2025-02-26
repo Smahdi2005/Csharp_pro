@@ -7,6 +7,7 @@ namespace Student
         //define a list of students//
         List<Students> Students = new();
 
+
         public Form1()
         {
             InitializeComponent();
@@ -20,15 +21,24 @@ namespace Student
         private void registerButton_Click(object sender, EventArgs e)
         {
             //add student to list
-            Students student = new Students();
+            Students student = new Students(firstNameTextBox.Text, lastNameTextBox.Text);
             Students.Add(student);
 
             //set properties for textboxes and labels//
             student.FirstName = firstNameTextBox.Text;
             student.LastName = lastNameTextBox.Text;
-            student.nationalcode = nationalCodeTextBox.Text;
+            student.Nationalcode = nationalCodeTextBox.Text;
 
             showRegisterLabel.Text = "you registered";
+
+            if(studentRoleCheckBox.Checked = true)
+            {
+                student.UserRole = "Student";
+            }
+            if (masterRolecheckBox.Checked = true)
+            {
+                student.UserRole = "Master";
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -51,12 +61,24 @@ namespace Student
             }
             catch
             {
+          
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void studentRoleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            studentRoleCheckBox.Checked = true;
+            
+        }
+
+        private void masterRolecheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            masterRolecheckBox.Checked = true;
         }
     }
 }
