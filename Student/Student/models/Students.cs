@@ -9,11 +9,16 @@ internal class Students : Users
         lastName = LastName;
     }
 
-    public Students(string firstName, string lastName, string nationalcode , string userRole) : this(firstName, lastName)
+    public Students(string firstName, string lastName, string nationalcode) : this(firstName, lastName)
     {
         {
             nationalcode = Nationalcode;
-            userRole = UserRole;
+            //check that user dont enter null data//
+            if(firstName==null || lastName==null || nationalcode== null)
+            {
+                MessageBox.Show("Please enter valid data");
+            }
+
         }
 
     }

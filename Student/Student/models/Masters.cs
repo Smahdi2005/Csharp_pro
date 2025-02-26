@@ -7,12 +7,10 @@ internal class Masters : Users
     {
         firstName = FirstName;
         lastName = LastName;
-    }
-
-    public Masters(string firstName , string lastName, string nationalCode,string userRole) : this(firstName , lastName)
-    {
-        nationalCode = Nationalcode;
-        UserRole = userRole;
-    
+        //check that user dont enter null data//
+        if (firstName == null || lastName == null)
+        {
+            MessageBox.Show("please enter valid data");
+        }
     }
 }
