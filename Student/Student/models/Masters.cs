@@ -3,14 +3,19 @@
 internal class Masters : Users
 {
     //set constructors//
-    public Masters(string firstName , string lastName) 
+    public Masters(string FirstName , string LastName , string NationalCode) 
     {
-        firstName = FirstName;
-        lastName = LastName;
+        FirstName = FirstName;
+        LastName = LastName;
+        Nationalcode = NationalCode;
         //check that user dont enter null data//
-        if (firstName == null || lastName == null)
+        
+        bool isnullFirstName = string.IsNullOrWhiteSpace(FirstName);
+        bool isnullLastName = string.IsNullOrWhiteSpace(LastName);
+        bool isnullNationalCode = string.IsNullOrWhiteSpace(NationalCode);
+        if(isnullFirstName == true || isnullLastName == true || isnullNationalCode == true )
         {
-            MessageBox.Show("please enter valid data");
+            MessageBox.Show("Pplease enter valid data");
         }
     }
 }

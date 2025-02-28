@@ -3,20 +3,24 @@
 internal class Students : Users
 {
     //set contructors//
-    public Students(string firstName, string lastName)
+    public Students(string FirstName, string LastName)
     {
-        firstName = FirstName;
-        lastName = LastName;
+        FirstName = FirstName;
+        LastName = LastName;
     }
 
-    public Students(string firstName, string lastName, string nationalcode) : this(firstName, lastName)
+    public Students(string FirstName, string LastName, string NationalCode): this(FirstName, LastName)
     {
         {
-            nationalcode = Nationalcode;
+            NationalCode = NationalCode;
             //check that user dont enter null data//
-            if(firstName==null || lastName==null || nationalcode== null)
+
+            bool isnullFirstName = string.IsNullOrWhiteSpace(FirstName);
+            bool isnullLastName = string.IsNullOrWhiteSpace(LastName);
+            bool isnullNationalCode = string.IsNullOrWhiteSpace(NationalCode);
+            if (isnullFirstName == true || isnullLastName == true || isnullNationalCode == true)
             {
-                MessageBox.Show("Please enter valid data");
+                MessageBox.Show("Pplease enter valid data");
             }
 
         }

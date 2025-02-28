@@ -1,6 +1,6 @@
 ﻿namespace Student
 {
-    partial class Masters
+    partial class MasterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,8 @@
             loginfirsnameMastersTextBox = new TextBox();
             loginlastNameMastersTextBox = new TextBox();
             loginMastersButton = new Button();
+            nationalCodeMasterTextBox = new TextBox();
+            nationalCodeMasterLabel = new Label();
             SuspendLayout();
             // 
             // firstNameMastersLabel
@@ -77,17 +79,35 @@
             loginMastersButton.UseVisualStyleBackColor = true;
             loginMastersButton.Click += loginMastersButton_Click;
             // 
-            // Masters
+            // nationalCodeMasterTextBox
+            // 
+            nationalCodeMasterTextBox.Location = new Point(142, 185);
+            nationalCodeMasterTextBox.Name = "nationalCodeMasterTextBox";
+            nationalCodeMasterTextBox.Size = new Size(190, 27);
+            nationalCodeMasterTextBox.TabIndex = 5;
+            // 
+            // nationalCodeMasterLabel
+            // 
+            nationalCodeMasterLabel.AutoSize = true;
+            nationalCodeMasterLabel.Location = new Point(40, 188);
+            nationalCodeMasterLabel.Name = "nationalCodeMasterLabel";
+            nationalCodeMasterLabel.Size = new Size(101, 20);
+            nationalCodeMasterLabel.TabIndex = 6;
+            nationalCodeMasterLabel.Text = "NationalCode";
+            // 
+            // MasterForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(763, 307);
+            Controls.Add(nationalCodeMasterLabel);
+            Controls.Add(nationalCodeMasterTextBox);
             Controls.Add(loginMastersButton);
             Controls.Add(loginlastNameMastersTextBox);
             Controls.Add(loginfirsnameMastersTextBox);
             Controls.Add(lastNameMastersLabel);
             Controls.Add(firstNameMastersLabel);
-            Name = "Masters";
+            Name = "MasterForm";
             Text = "Masters";
             ResumeLayout(false);
             PerformLayout();
@@ -100,5 +120,7 @@
         private TextBox loginfirsnameMastersTextBox;
         private TextBox loginlastNameMastersTextBox;
         private Button loginMastersButton;
+        private TextBox nationalCodeMasterTextBox;
+        private Label nationalCodeMasterLabel;
     }
 }

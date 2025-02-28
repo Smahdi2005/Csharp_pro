@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Student
 {
-    public partial class students : Form
+    public partial class StudentForm : Form
     {
-        public students()
+        public StudentForm()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Student
         private string FirstNameFromForm1to2;
         private string LasttNameFromForm1to2;
         //defining constructor for students and get data from form 1 //
-        public students(string firstName, string lastname, string nationalcode)
+        public StudentForm(string firstName, string lastname, string nationalcode)
         {
             InitializeComponent();
             // set the data that got//

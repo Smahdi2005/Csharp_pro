@@ -31,12 +31,12 @@
             firstNameLabel = new Label();
             lastNameLabel = new Label();
             nationalCodeLabel = new Label();
-            firstNameTextBox = new TextBox();
-            lastNameTextBox = new TextBox();
-            nationalCodeTextBox = new TextBox();
+            usersFirstNameTextBox = new TextBox();
+            usersLastNameTextBox = new TextBox();
+            usersNationalCodeTextBox = new TextBox();
             registerButton = new Button();
-            studentRoleCheckBox = new CheckBox();
-            masterRolecheckBox = new CheckBox();
+            usersRoleTextBox = new TextBox();
+            userRoleLabel = new Label();
             SuspendLayout();
             // 
             // firstNameLabel
@@ -67,26 +67,26 @@
             nationalCodeLabel.TabIndex = 2;
             nationalCodeLabel.Text = "NationalCode";
             // 
-            // firstNameTextBox
+            // usersFirstNameTextBox
             // 
-            firstNameTextBox.Location = new Point(140, 47);
-            firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(181, 27);
-            firstNameTextBox.TabIndex = 3;
+            usersFirstNameTextBox.Location = new Point(140, 47);
+            usersFirstNameTextBox.Name = "usersFirstNameTextBox";
+            usersFirstNameTextBox.Size = new Size(181, 27);
+            usersFirstNameTextBox.TabIndex = 3;
             // 
-            // lastNameTextBox
+            // usersLastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(140, 88);
-            lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(181, 27);
-            lastNameTextBox.TabIndex = 4;
+            usersLastNameTextBox.Location = new Point(140, 88);
+            usersLastNameTextBox.Name = "usersLastNameTextBox";
+            usersLastNameTextBox.Size = new Size(181, 27);
+            usersLastNameTextBox.TabIndex = 4;
             // 
-            // nationalCodeTextBox
+            // usersNationalCodeTextBox
             // 
-            nationalCodeTextBox.Location = new Point(140, 133);
-            nationalCodeTextBox.Name = "nationalCodeTextBox";
-            nationalCodeTextBox.Size = new Size(181, 27);
-            nationalCodeTextBox.TabIndex = 5;
+            usersNationalCodeTextBox.Location = new Point(140, 133);
+            usersNationalCodeTextBox.Name = "usersNationalCodeTextBox";
+            usersNationalCodeTextBox.Size = new Size(181, 27);
+            usersNationalCodeTextBox.TabIndex = 5;
             // 
             // registerButton
             // 
@@ -98,39 +98,33 @@
             registerButton.UseVisualStyleBackColor = true;
             registerButton.Click += registerButton_Click;
             // 
-            // studentRoleCheckBox
+            // usersRoleTextBox
             // 
-            studentRoleCheckBox.AutoSize = true;
-            studentRoleCheckBox.Location = new Point(396, 50);
-            studentRoleCheckBox.Name = "studentRoleCheckBox";
-            studentRoleCheckBox.Size = new Size(82, 24);
-            studentRoleCheckBox.TabIndex = 15;
-            studentRoleCheckBox.Text = "Student";
-            studentRoleCheckBox.UseVisualStyleBackColor = true;
-            studentRoleCheckBox.CheckedChanged += studentRoleCheckBox_CheckedChanged;
+            usersRoleTextBox.Location = new Point(140, 184);
+            usersRoleTextBox.Name = "usersRoleTextBox";
+            usersRoleTextBox.Size = new Size(181, 27);
+            usersRoleTextBox.TabIndex = 7;
             // 
-            // masterRolecheckBox
+            // userRoleLabel
             // 
-            masterRolecheckBox.AutoSize = true;
-            masterRolecheckBox.Location = new Point(396, 80);
-            masterRolecheckBox.Name = "masterRolecheckBox";
-            masterRolecheckBox.Size = new Size(76, 24);
-            masterRolecheckBox.TabIndex = 16;
-            masterRolecheckBox.Text = "Master";
-            masterRolecheckBox.UseVisualStyleBackColor = true;
-            masterRolecheckBox.CheckedChanged += masterRolecheckBox_CheckedChanged;
+            userRoleLabel.AutoSize = true;
+            userRoleLabel.Location = new Point(29, 187);
+            userRoleLabel.Name = "userRoleLabel";
+            userRoleLabel.Size = new Size(39, 20);
+            userRoleLabel.TabIndex = 8;
+            userRoleLabel.Text = "Role";
             // 
             // Users
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(746, 382);
-            Controls.Add(masterRolecheckBox);
-            Controls.Add(studentRoleCheckBox);
+            Controls.Add(userRoleLabel);
+            Controls.Add(usersRoleTextBox);
             Controls.Add(registerButton);
-            Controls.Add(nationalCodeTextBox);
-            Controls.Add(lastNameTextBox);
-            Controls.Add(firstNameTextBox);
+            Controls.Add(usersNationalCodeTextBox);
+            Controls.Add(usersLastNameTextBox);
+            Controls.Add(usersFirstNameTextBox);
             Controls.Add(nationalCodeLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(firstNameLabel);
@@ -146,11 +140,11 @@
         private Label firstNameLabel;
         private Label lastNameLabel;
         private Label nationalCodeLabel;
-        private TextBox firstNameTextBox;
-        private TextBox lastNameTextBox;
-        private TextBox nationalCodeTextBox;
+        private TextBox usersFirstNameTextBox;
+        private TextBox usersLastNameTextBox;
+        private TextBox usersNationalCodeTextBox;
         private Button registerButton;
-        private CheckBox studentRoleCheckBox;
-        private CheckBox masterRolecheckBox;
+        private TextBox usersRoleTextBox;
+        private Label userRoleLabel;
     }
 }

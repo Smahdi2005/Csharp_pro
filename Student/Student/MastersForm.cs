@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace Student
 {
-    public partial class Masters : Form
+    public partial class MasterForm : Form
     {
-        public Masters()
+        public MasterForm()
         {
             InitializeComponent();
         }
         // passing data from form 1 to 2//
         private string FirstnameFromForm1to3;
         private string lastnameFromForm2to3;
+        private string NationalCodeFrom1to3;        
         //defining constructor for students and get data from form 1 //
-        public Masters(string firstname, string lastname)
+        public MasterForm(string firstname, string lastname, string nationalCodeFrom1to3)
         {
             InitializeComponent();
             // set the data that got//
             FirstnameFromForm1to3 = firstname;
             lastnameFromForm2to3 = lastname;
+            NationalCodeFrom1to3 = nationalCodeFrom1to3;    
         }
 
         private void loginMastersButton_Click(object sender, EventArgs e)

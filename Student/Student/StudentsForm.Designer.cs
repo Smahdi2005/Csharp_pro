@@ -1,6 +1,6 @@
 ﻿namespace Student
 {
-    partial class students
+    partial class StudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@
             loginNationalCodeStudentsLabel.TabIndex = 6;
             loginNationalCodeStudentsLabel.Text = "NationalCode";
             // 
-            // students
+            // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             Controls.Add(loginFirstNameStudentsTextBox);
             Controls.Add(lastNameStudentsLabel);
             Controls.Add(loginFirstNamStudentsLabel);
-            Name = "students";
+            Name = "StudentForm";
             Text = "Students";
             ResumeLayout(false);
             PerformLayout();

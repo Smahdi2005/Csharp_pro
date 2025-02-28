@@ -31,29 +31,30 @@ namespace Student
         private void registerButton_Click(object sender, EventArgs e)
         {
             //add student to list
-            Students student = new Students(firstNameTextBox.Text, lastNameTextBox.Text, nationalCodeTextBox.Text);
+            Students student = new Students(usersFirstNameTextBox.Text, usersLastNameTextBox.Text, usersNationalCodeTextBox.Text);
             Students.Add(student);
 
             //set properties for textboxes and labels//
-            student.FirstName = firstNameTextBox.Text;
-            student.LastName = lastNameTextBox.Text;
-            student.Nationalcode = nationalCodeTextBox.Text;
+            student.FirstName = usersFirstNameTextBox.Text;
+            student.LastName = usersLastNameTextBox.Text;
+            student.Nationalcode = usersNationalCodeTextBox.Text;
 
             MessageBox.Show("you are registered");
             //checking role of the user//
-            if(studentRoleCheckBox.Checked = true)
+            string role = usersRoleTextBox.Text.ToLower().Trim();
+            if(role == "student")
             {
-                masterRolecheckBox.Checked = false;
+                
                 student.UserRole = "Student";
-                students StudentForm = new students(firstNameTextBox.Text,lastNameTextBox.Text, nationalCodeTextBox.Text);
+                StudentForm StudentForm = new StudentForm(usersFirstNameTextBox.Text,usersLastNameTextBox.Text, usersNationalCodeTextBox.Text);
                 StudentForm.Show(); //student form will open//
 
             }
-            if (masterRolecheckBox.Checked = true)
+            else if (role == "master")
             {
-                studentRoleCheckBox.Checked = false;
-                student.UserRole = "Master";
-                Masters MasterForm = new Masters(firstNameTextBox.Text, lastNameTextBox.Text);
+                
+                student.UserRole = "master";
+                MasterForm MasterForm = new MasterForm(usersFirstNameTextBox.Text, usersLastNameTextBox.Text, usersNationalCodeTextBox.Text);
                 MasterForm.Show(); // master form will open//
             }
 
@@ -65,14 +66,14 @@ namespace Student
 
         private void studentRoleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            studentRoleCheckBox.Checked = true;
+
             
         }
 
         private void masterRolecheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
-            masterRolecheckBox.Checked = true;
+
         }
     }
 }
