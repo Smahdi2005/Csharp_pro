@@ -77,6 +77,7 @@
             loginStudentsButton.TabIndex = 4;
             loginStudentsButton.Text = "Login";
             loginStudentsButton.UseVisualStyleBackColor = true;
+            loginStudentsButton.Click += loginStudentsButton_Click;
             // 
             // nationalCodeStudentsTextBox
             // 

@@ -31,7 +31,12 @@ namespace Student
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-           //cheking the data that is valid or not //
+            
+        }
+
+        private void loginStudentsButton_Click(object sender, EventArgs e)
+        {
+            //cheking the data that is valid or not //
             if (loginFirstNameStudentsTextBox.Text == FirstNameFromForm1to2)
             {
                 if (loginLastNameStudentsTextBox.Text == LasttNameFromForm1to2)
