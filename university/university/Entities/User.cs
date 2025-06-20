@@ -13,11 +13,12 @@ namespace university.Entities
 
         public string LastName { get; set; }
 
-        public int MyProperty { get; set; }
+        public string NationalCode { get; set; }
 
+        public string MobileNumber { get; set; }
         public DateTime BirthDate { get; set; }
 
-        public bool ISAdmin { get; set; }
+        public bool IsAdmin { get; set; }
 
 
 
