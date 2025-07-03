@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace university.enums
+namespace university.bisunesse
 {
-    internal class LessonType
+    internal class StudentLesson
     {
     }
 }

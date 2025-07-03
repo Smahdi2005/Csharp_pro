@@ -8,5 +8,8 @@ namespace university.Entities
 {
     internal class Student : User
     {
+        public string StudentCode { get; set; }
+        public int MajorId { get; set; }
+        public string MajorName { get; set; }
     }
 }

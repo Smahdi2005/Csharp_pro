@@ -1,8 +1,14 @@
-﻿namespace university.interfaces;
+﻿using university.Entities;
 
-internal interface IBaseBusiness<T> where T : class
+namespace university.interfaces;
+
+public interface IBaseBusiness<T> where T : class
 {
     bool Add(T item);
-
     bool update(T item);
+
+    public bool GetDataFromDb(string userName ,string password);
+
+    
+    
 }
