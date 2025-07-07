@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace university.Entities
 {
-    internal class User : IFullEntity<int>
+    public class User : IFullEntity<int>
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

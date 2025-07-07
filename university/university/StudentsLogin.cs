@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using university.bisunesse;
+using university.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace university
 {
@@ -20,18 +22,21 @@ namespace university
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string userName = userNameTextBox.Text;
-            string password = passwordTextBox.Text;
+            string userName = userNameTextBox.Text.Trim();
+            string password = passwordTextBox.Text.Trim();
             StudentBusiness studentBusiness = new StudentBusiness();
-            bool ValidAdmin = studentBusiness.GetDataFromDb(userName, password);
-            if (ValidAdmin)
+            Student student = studentBusiness.GetDataFromDb(userName, password);
+
+            if (student != null)
             {
-                StudentForm studentForm = new StudentForm();
-                studentForm.Show();
+                // لاگین موفق
+                StudentForm form = new StudentForm(student);
+                form.Show();
+                
             }
             else
             {
-                MessageBox.Show("invalid data");
+                MessageBox.Show("Invalid Data.");
             }
         }
 

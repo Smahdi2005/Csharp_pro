@@ -7,10 +7,9 @@ using university.Entities;
 
 namespace university.interfaces
 {
-    internal interface IStudentBusiness
+    internal interface ICourseBusiness
     {
-        public bool ChangePassword(string mobileNumber, string newPassword);
-
-        public Student ShowInfo(int id);
+        public List<Course> SearchCourse(string majorGroup , string courseType);
+        public bool SelectCourse();
     }
 }

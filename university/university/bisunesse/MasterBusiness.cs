@@ -64,5 +64,10 @@ namespace university.bisunesse
         {
             throw new NotImplementedException();
         }
+
+        Student IBaseBusiness<Master>.GetDataFromDb(string userName, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

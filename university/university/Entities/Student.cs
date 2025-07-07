@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace university.Entities
 {
-    internal class Student : User
+    public class Student : User
     {
         public string StudentCode { get; set; }
         public int MajorId { get; set; }

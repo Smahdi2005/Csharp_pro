@@ -14,82 +14,74 @@ internal class StudentBusiness : IBaseBusiness<Student> , IStudentBusiness
     {
         throw new NotImplementedException();
     }
-    public bool ShowInfo(string firstName, string lastName, string nationalCode, string studentCode)
+
+#nullable disable
+    public Student ShowInfo(int id)
+    {
+        Student student = null;
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "SELECT s.Id , s.FirstName , s.LastName , s.NationalCode , s.StudentCode , m.Major FROM Student s JOIN Major m ON s.MajorId = m.Id WHERE s.Id = @Id";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id", id);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                student = new Student()
+                {
+                    Id = (int)reader["Id"],
+                    FirstName = reader["FirstName"].ToString(),
+                    LastName = reader["LastName"].ToString(),
+                    NationalCode = reader["NationalCode"].ToString(),
+                    StudentCode = reader["StudentCode"].ToString(),
+                    MajorName = reader["Major"].ToString()
+                };
+            }
+        }
+        return student;
+    }
+#nullable enable
+    public Student GetDataFromDb(string userName, string password)
     {
         Student student = null;
         try
         {
-            using (SqlConnection conection = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                bool IsAffected = false;
+                string query = "SELECT    s.Id,    s.FirstName,    s.LastName,   s.NationalCode,    s.StudentCode,    m.Major  FROM Student s INNER JOIN  Major m ON s.MajorId = m.Id  WHERE  s.StudentCode = @StudentCode AND s.NationalCode = @NationalCode";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@StudentCode", userName);
+                cmd.Parameters.AddWithValue("@NationalCode", password);
 
-                conection.Open();
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                string query = @"SELECT Id , FirstName , LastName , NationalCode , StudentCode  FROM [Student] WHERE FirstName=@FirstName AND LastName=@LastName AND StudentCode = @StudentCode AND NationalCode = @NationalCode";
-
-                using (SqlCommand cmd = new SqlCommand(query, conection))
+                if (reader.Read())
                 {
-                    cmd.Parameters.AddWithValue("@FirstName", firstName.Trim());
-
-                    cmd.Parameters.AddWithValue("@LastName", lastName.Trim());
-                    
-                    cmd.Parameters.AddWithValue("@StudentCode", studentCode.Trim());
-
-                    cmd.Parameters.AddWithValue("@NationalCode", nationalCode.Trim());
-
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
+                    student = new Student
+                    {
+                        Id = (int)reader["Id"],
+                        FirstName = reader["FirstName"].ToString(),
+                        LastName = reader["LastName"].ToString(),
+                        NationalCode = reader["NationalCode"].ToString(),
+                        StudentCode = reader["StudentCode"].ToString(),
+                        MajorName = reader["Major"].ToString()
+                    };
                 }
             }
         }
-
-
         catch (Exception ex)
         {
-            MessageBox.Show($"Error : {ex.Message}");
-            return false;
-
+            MessageBox.Show("Eror: " + ex.Message);
         }
 
+        return student;
     }
 
-    public bool GetDataFromDb(string userName, string password)
-    {
-        Student student = null;
-        try
-        {
-            using (SqlConnection conection = new SqlConnection(connectionString))
-            {
-                bool IsAffected = false;
 
-                conection.Open();
-
-                string query = @"SELECT Id , StudentCode  , NationalCode  FROM [Student] WHERE StudentCode = @StudentCode AND NationalCode = @NationalCode";
-
-                using (SqlCommand cmd = new SqlCommand(query, conection))
-                {
-                    cmd.Parameters.AddWithValue("@StudentCode", userName.Trim());
-
-                    cmd.Parameters.AddWithValue("@NationalCode", password.Trim());
-
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
-                }
-            }
-        }
-
-
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Error : {ex.Message}");
-            return false;
-
-        }
-
-    }
-
-    
-    public bool update(Student item)
+        public bool update(Student item)
     {
         throw new NotImplementedException();
     }

@@ -44,13 +44,15 @@
             studentCodeTextBox = new TextBox();
             label2 = new Label();
             majorTextBox = new TextBox();
+            termStatueToolStripMenuItem = new ToolStripMenuItem();
+            reportCardToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { registerStudentsLessonsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { registerStudentsLessonsToolStripMenuItem, termStatueToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -176,6 +178,19 @@
             majorTextBox.Size = new Size(125, 27);
             majorTextBox.TabIndex = 10;
             // 
+            // termStatueToolStripMenuItem
+            // 
+            termStatueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reportCardToolStripMenuItem });
+            termStatueToolStripMenuItem.Name = "termStatueToolStripMenuItem";
+            termStatueToolStripMenuItem.Size = new Size(102, 24);
+            termStatueToolStripMenuItem.Text = "Term Statue";
+            // 
+            // reportCardToolStripMenuItem
+            // 
+            reportCardToolStripMenuItem.Name = "reportCardToolStripMenuItem";
+            reportCardToolStripMenuItem.Size = new Size(224, 26);
+            reportCardToolStripMenuItem.Text = "Report Card";
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -218,5 +233,7 @@
         private TextBox studentCodeTextBox;
         private Label label2;
         private TextBox majorTextBox;
+        private ToolStripMenuItem termStatueToolStripMenuItem;
+        private ToolStripMenuItem reportCardToolStripMenuItem;
     }
 }

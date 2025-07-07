@@ -159,6 +159,11 @@ internal class AdminBusiness : IBaseBusiness<Admin>, IAdminBusiness<Admin>
         throw new NotImplementedException();
     }
 
+    Student IBaseBusiness<Admin>.GetDataFromDb(string userName, string password)
+    {
+        throw new NotImplementedException();
+    }
+
     bool IBaseBusiness<Admin>.update(Admin item)
     {
         throw new NotImplementedException();
